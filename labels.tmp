@@ -1,0 +1,25 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.14</VERSION>
+ <DEVICE>Unknown</DEVICE>
+ <WORKING_DIR>C:\Micros\P6</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:\Program Files (x86)\AVRStudio4\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Micros\P6\p6.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Micros\P6\P6.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Micros\P6\P6.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Micros\P6\P6.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <cero><FILE>C:\Micros\P6\p6.asm</FILE><LINE>26</LINE></cero>
+  <uno><FILE>C:\Micros\P6\p6.asm</FILE><LINE>22</LINE></uno>
+  <otro><FILE>C:\Micros\P6\p6.asm</FILE><LINE>30</LINE></otro>
+ </LABELS>
+</ASSEMBLER_INFO>
