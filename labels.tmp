@@ -18,8 +18,13 @@
   <FILE>C:\Micros\P6\P6.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <cero><FILE>C:\Micros\P6\p6.asm</FILE><LINE>26</LINE></cero>
-  <uno><FILE>C:\Micros\P6\p6.asm</FILE><LINE>22</LINE></uno>
-  <otro><FILE>C:\Micros\P6\p6.asm</FILE><LINE>30</LINE></otro>
+  <inicio><FILE>C:\Micros\P6\p6.asm</FILE><LINE>24</LINE></inicio>
+  <invR3031><FILE>C:\Micros\P6\p6.asm</FILE><LINE>37</LINE></invR3031>
+  <invR2928><FILE>C:\Micros\P6\p6.asm</FILE><LINE>32</LINE></invR2928>
+  <nada><FILE>C:\Micros\P6\p6.asm</FILE><LINE>29</LINE></nada>
+  <reverseBits><FILE>C:\Micros\P6\p6.asm</FILE><LINE>48</LINE></reverseBits>
+  <initMaskCont><FILE>C:\Micros\P6\p6.asm</FILE><LINE>42</LINE></initMaskCont>
+  <inicioReverse><FILE>C:\Micros\P6\p6.asm</FILE><LINE>53</LINE></inicioReverse>
+  <addContador><FILE>C:\Micros\P6\p6.asm</FILE><LINE>70</LINE></addContador>
  </LABELS>
 </ASSEMBLER_INFO>

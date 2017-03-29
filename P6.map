@@ -1,8 +1,0 @@
-
-AVRASM ver. 2.1.14  C:\Micros\P6\p6.asm Sat Mar 25 00:09:59 2017
-
-
-EQU  INIT_VALUE   00000000
-CSEG cero         0000000a
-CSEG uno          00000007
-CSEG otro         0000000d

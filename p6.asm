@@ -15,20 +15,21 @@ ldi R28,0xE6 ;1110 0110
 ldi R29,0x55 ;0101 0101
 ldi R30,0xAA ;1010 1010
 ldi R31,0xFF ;1111 1111
-
-initmask:
-ldi R23,0x80 /*MSB mask*/
-ldi R22,0x01 /*LSB mask*/
-ldi R2,0	 /*contador*/
 /*========================= 
    MSB R27		LSB R26
    --------------------
    R10 MSBaux	R9 LSBaux
 ==========================*/
 ;------------- ciclo principal --------------------------------------
+inicio:
 cpi R24,0
 breq invR3031
+cpi r24,1
+breq invR2928
+nada:
+jmp inicio
 /*---------Invertir R29-R28----------*/
+invR2928:
 mov R27,R29
 mov r26,r28
 jmp reverseBits
@@ -38,33 +39,38 @@ invR3031:
 mov R27,R31
 mov r26,R30
 
+initMaskCont:
+ldi R15,0x0  /*contador*/
+ldi R23,0x80 /*MSB mask*/
+ldi R22,0x01 /*LSB mask*/
+
 /*--------Procedimiento Reverse--------*/
 reverseBits:
+	inc r15 /*incrementando contador*/
+
 	mov R10,R27 /*MSB copia para comparaciones*/
 	mov R9,R26  /*LSB copia para comparaciones*/
 	inicioReverse:
 	mov r8,r23 /*MSBmask copia*/
 	mov r7,r22 /*LSBmask copia*/
 
-	and R10,R23
-	and R19	,R22
+	and R10,R23 /*verificando status bit*/
+	and R19	,R22 /*verificando status*/
 
-	/*haciendo corrimiento en la mascara*/
-	lsr r23
-	lsl r22
+	lsr R23 /*corrimiento en MSBmask*/
+	lsl R22 /*corrimiento en LSBmask*/
 
 	cp R10,R19
 	breq addContador
-	/*se niegan los bits (complemento 1)*/
-	com r8 
-	com r7
 
-	and r27,r8 
-	and r26,r7
+	com r8 /*negando MSBmask complemento1*/
+	com r7 /*negando LSBmask complemento1*/
+	and r27,r8 /*aplicando invert bit a MSB*/
+	and r26,r7 /*aplicando invert bit a LSB*/
 	addContador:
-		inc r2
-		cpi r2,7
-		breq initmask
+		cpi r15, 0x8
+		breq initMaskCont
+		jmp reverseBits
 
 
 
