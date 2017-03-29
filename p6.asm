@@ -40,7 +40,7 @@ mov R27,R31
 mov r26,R30
 
 initMaskCont:
-ldi R15,0x0  /*contador*/
+ldi R15,0  /*contador*/
 ldi R23,0x80 /*MSB mask*/
 ldi R22,0x01 /*LSB mask*/
 
@@ -68,7 +68,7 @@ reverseBits:
 	and r27,r8 /*aplicando invert bit a MSB*/
 	and r26,r7 /*aplicando invert bit a LSB*/
 	addContador:
-		cpi r15, 0x8
+		cpi r15, 8
 		breq initMaskCont
 		jmp reverseBits
 
