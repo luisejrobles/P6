@@ -8,7 +8,7 @@
 ;********************************************
 
 ;------------- definiciones e includes ------------------------------
-.equ INIT_VALUE = 0 ; Valor inicial R24
+.equ INIT_VALUE = 1 ; Valor inicial R24
 ;------------- inicializar ------------------------------------------
 ldi R24,INIT_VALUE
 ldi R28,0xE6 ;1110 0110
@@ -27,7 +27,7 @@ breq invR3031
 cpi r24,1
 breq invR2928
 nada:
-jmp inicio
+jmp nada
 /*---------Invertir R29-R28----------*/
 invR2928:
 mov R27,R29
@@ -40,13 +40,13 @@ mov R27,R31
 mov r26,R30
 
 initMaskCont:
-ldi R15,0  /*contador*/
+ldi R16,0  /*contador*/
 ldi R23,0x80 /*MSB mask*/
 ldi R22,0x01 /*LSB mask*/
 
 /*--------Procedimiento Reverse--------*/
 reverseBits:
-	inc r15 /*incrementando contador*/
+	inc r16 /*incrementando contador*/
 
 	mov R10,R27 /*MSB copia para comparaciones*/
 	mov R9,R26  /*LSB copia para comparaciones*/
@@ -68,11 +68,7 @@ reverseBits:
 	and r27,r8 /*aplicando invert bit a MSB*/
 	and r26,r7 /*aplicando invert bit a LSB*/
 	addContador:
-		cpi r15, 8
+		cpi r16,8 
 		breq initMaskCont
 		jmp reverseBits
-
-
-
-
 ;--------------------------------------------------------------------

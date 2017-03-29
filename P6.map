@@ -1,0 +1,13 @@
+
+AVRASM ver. 2.1.14  C:\Micros\P6\p6.asm Wed Mar 29 13:40:23 2017
+
+
+EQU  INIT_VALUE   00000001
+CSEG inicio       00000005
+CSEG invR3031     0000000f
+CSEG invR2928     0000000b
+CSEG nada         00000009
+CSEG reverseBits  00000014
+CSEG initMaskCont 00000011
+CSEG inicioReverse 00000017
+CSEG addContador  00000023
