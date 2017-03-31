@@ -83,7 +83,7 @@ recorreMascaras:
 	jmp reverseByte
 ;Metiendo a registros correspondientes
 meteRegistros:
-	cpi 24,1
+	cpi R24,1
 	breq meteY
 	meteZ:
 		mov R31,R23

@@ -5,7 +5,7 @@
  <INCLUDE_PATH>
   <DIR>D:\Program Files (x86)\AVRStudio4\AvrAssembler2\Appnotes</DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Micros\P6\test.asm</SOURCE_FILE>
+ <SOURCE_FILE>C:\Micros\P6\p6.asm</SOURCE_FILE>
  <INCLUDED_FILES>
  </INCLUDED_FILES>
  <OBJECT_FILES>
@@ -18,7 +18,17 @@
   <FILE>C:\Micros\P6\P6.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <arriba><FILE>C:\Micros\P6\test.asm</FILE><LINE>6</LINE></arriba>
-  <abajo><FILE>C:\Micros\P6\test.asm</FILE><LINE>11</LINE></abajo>
+  <inv3130><FILE>C:\Micros\P6\p6.asm</FILE><LINE>43</LINE></inv3130>
+  <inv2928><FILE>C:\Micros\P6\p6.asm</FILE><LINE>47</LINE></inv2928>
+  <nada><FILE>C:\Micros\P6\p6.asm</FILE><LINE>40</LINE></nada>
+  <initReverse><FILE>C:\Micros\P6\p6.asm</FILE><LINE>51</LINE></initReverse>
+  <reverseByte><FILE>C:\Micros\P6\p6.asm</FILE><LINE>55</LINE></reverseByte>
+  <MSBvalor><FILE>C:\Micros\P6\p6.asm</FILE><LINE>66</LINE></MSBvalor>
+  <MSBcero><FILE>C:\Micros\P6\p6.asm</FILE><LINE>70</LINE></MSBcero>
+  <recorreMascaras><FILE>C:\Micros\P6\p6.asm</FILE><LINE>78</LINE></recorreMascaras>
+  <invertirBit><FILE>C:\Micros\P6\p6.asm</FILE><LINE>74</LINE></invertirBit>
+  <meteRegistros><FILE>C:\Micros\P6\p6.asm</FILE><LINE>85</LINE></meteRegistros>
+  <meteY><FILE>C:\Micros\P6\p6.asm</FILE><LINE>92</LINE></meteY>
+  <meteZ><FILE>C:\Micros\P6\p6.asm</FILE><LINE>88</LINE></meteZ>
  </LABELS>
 </ASSEMBLER_INFO>
