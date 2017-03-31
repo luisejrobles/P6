@@ -6,7 +6,6 @@
 ;*Jimenez Robles Luis Eduardo				 *
 ;*01208396									 *
 ;*********************************************
-
 ;------------- definiciones e includes ------------------------------
 .equ INIT_VALUE = 1 ;
 ;------------- inicializar ------------------------------------------
@@ -15,8 +14,6 @@ ldi R31,0xFF ;1111 1111
 ldi R30,0xAA ;1010 1010
 ldi R29,0x55 ;0101 0101
 ldi R28,0xE6 ;1110 0110
-
-; M A S C A R A S
 /*===========================
 Registros usados
 	R31,0xFF ;1111 1111
@@ -36,7 +33,6 @@ Registros usados
 	R21 [MSBaux] pruebas bits
 	R20 [LSBaux] pruebas bits
 ===========================*/
-
 cpi R24,0
 breq inv3130
 cpi R24,1
