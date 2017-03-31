@@ -1,1 +1,1 @@
-<AVRWorkspace><IOSettings><CurrentRegisters/></IOSettings><part name="ATMEGA1280"/><Files><File00000 Name="C:\Micros\P6\p6v2.asm" Position="258 67 1515 592" LineCol="20 0" State="Maximized"/></Files></AVRWorkspace>
+<AVRWorkspace><IOSettings><CurrentRegisters/></IOSettings><part name="ATmega1280"/><Files><File00000 Name="C:\Micros\P6\p6.asm" Position="224 67 1542 592" LineCol="4 31" State="Maximized"/><File00001 Name="C:\Micros\P6\test.asm" Position="284 150 1430 480" LineCol="11 0" State="Maximized"/></Files></AVRWorkspace>
