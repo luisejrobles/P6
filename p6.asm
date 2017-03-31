@@ -9,7 +9,7 @@
 ;------------- definiciones e includes ------------------------------
 .equ INIT_VALUE = 1 ;
 ;------------- inicializar ------------------------------------------
-ldi R24,INIT_VALUE ;0 invierte R31-R30         1 invierte R29-R28
+ldi R24,INIT_VALUE ;0 invierte R31-R30(Z)       1 invierte R29-R28(Y)
 ldi R31,0xFF ;1111 1111
 ldi R30,0xAA ;1010 1010
 ldi R29,0x55 ;0101 0101
@@ -79,5 +79,17 @@ recorreMascaras:
 	lsr R27	;recorriendo MSBmask
 	lsl R26 ;recorriendo LSBmask
 	cpi R25,8
-	breq initReverse
+	breq meteRegistros
 	jmp reverseByte
+;Metiendo a registros correspondientes
+meteRegistros:
+	cpi 24,1
+	breq meteY
+	meteZ:
+		mov R31,R23
+		mov R30,R22
+		jmp initReverse
+	meteY:
+		mov R29,R23
+		mov R28,R22
+		jmp initReverse
