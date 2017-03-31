@@ -1,74 +1,100 @@
-;********************************************
-;*   Universidad Autonoma de Baja California*
-;*    Microprocesadores y Microcontroladores*
-;*											*
-;*                  Practica 6				*
-;*Jimenez Robles Luis Eduardo				*
-;*01208396									*
-;********************************************
+;*********************************************
+;*   Universidad Autonoma de Baja California *
+;*    Microprocesadores y Microcontroladores *
+;*											 *
+;*                  Practica 6				 *
+;*Jimenez Robles Luis Eduardo				 *
+;*01208396									 *
+;*********************************************
 
 ;------------- definiciones e includes ------------------------------
-.equ INIT_VALUE = 1 ; Valor inicial R24
+.equ INIT_VALUE = 1 ;
 ;------------- inicializar ------------------------------------------
-ldi R24,INIT_VALUE
-ldi R28,0xE6 ;1110 0110
-ldi R29,0x55 ;0101 0101
-ldi R30,0xAA ;1010 1010
+ldi R24,INIT_VALUE ;0 invierte R31-R30         1 invierte R29-R28
 ldi R31,0xFF ;1111 1111
-/*========================= 
-   MSB R27		LSB R26
-   --------------------
-   R10 MSBaux	R9 LSBaux
-==========================*/
-;------------- ciclo principal --------------------------------------
-inicio:
+ldi R30,0xAA ;1010 1010
+ldi R29,0x55 ;0101 0101
+ldi R28,0xE6 ;1110 0110
+
+; M A S C A R A S
+/*===========================
+Registros usados
+	R31,0xFF ;1111 1111
+	R30,0xAA ;1010 1010
+	R29,0x55 ;0101 0101
+	R28,0xE6 ;1110 0110
+
+	R27 [MSBmask]
+	R26 [LSBmask]
+
+	R25 [Counter]
+	R24,INIT_VALUE [0 invierte R31-R30] [1 invierte R29-R28]
+
+	R23 [MSB] entrada funcion
+	R22 [LSB] entrada funcion
+
+	R21 [MSBaux] pruebas bits
+	R20 [LSBaux] pruebas bits
+===========================*/
+
 cpi R24,0
-breq invR3031
-cpi r24,1
-breq invR2928
+breq inv3130
+cpi R24,1
+breq inv2928
 nada:
 jmp nada
-/*---------Invertir R29-R28----------*/
-invR2928:
-mov R27,R29
-mov r26,r28
-jmp reverseBits
 
-invR3031:
-/*---------Invertir R31-R30----------*/
-mov R27,R31
-mov r26,R30
+inv3130:
+	mov R23,R31
+	mov R22,R30
+	jmp initReverse
+inv2928:
+	mov R23,R29
+	mov R22,R28
 
-initMaskCont:
-ldi R16,0  /*contador*/
-ldi R23,0x80 /*MSB mask*/
-ldi R22,0x01 /*LSB mask*/
+initReverse:
+	ldi R27,0x80 ;MSBmask
+	ldi R26,0x01  ;LSBmask
+	ldi R25,0x00 ;Init counter
+reverseByte:
+	inc R25
+	mov R21,R23 ;MSB para pruebas 
+	mov R20,R22 ;LSB para pruebas
 
-/*--------Procedimiento Reverse--------*/
-reverseBits:
-	inc r16 /*incrementando contador*/
+	and R21,R27 
+	and R20,R26
+	
+	cpi R21,1	//Comparando si el bit seleccionado es 0 o 1
+	brsh MSBvalor
+	jmp MSBcero
+MSBvalor:
+	cpi R20,1
+	brsh recorreMascaras
+	jmp invertirBit
+MSBcero:
+	cpi R20,0
+	breq recorreMascaras
 
-	mov R10,R27 /*MSB copia para comparaciones*/
-	mov R9,R26  /*LSB copia para comparaciones*/
-	inicioReverse:
-	mov r8,r23 /*MSBmask copia*/
-	mov r7,r22 /*LSBmask copia*/
+invertirBit:
+	;======NO SON IGUALES=========
+	//mov R21,R23 ;restaurando auxiliar MSB
+	//mov R20,R22 ;restaurando auxiliar LSB
 
-	and R10,R23 /*verificando status bit*/
-	and R19	,R22 /*verificando status*/
+	//com R27 ;complemento uno MSBmask
+	//com R26 ;complemento uno LSBmask
+		eor R23,R27 ;negando bit diferente
+		eor R22,R26 ;negando bit diferente
+	//com R27 ;complemento uno MSBmask para regresar a edo. inicial
+	//com R26 ;complemento uno LSBmask para regresar a edo. inicial
+recorreMascaras:
+	lsr R27	;recorriendo MSBmask
+	lsl R26 ;recorriendo LSBmask
+	cpi R25,8
+	breq initReverse
+	jmp reverseByte
 
-	lsr R23 /*corrimiento en MSBmask*/
-	lsl R22 /*corrimiento en LSBmask*/
+	
 
-	cp R10,R19
-	breq addContador
 
-	com r8 /*negando MSBmask complemento1*/
-	com r7 /*negando LSBmask complemento1*/
-	and r27,r8 /*aplicando invert bit a MSB*/
-	and r26,r7 /*aplicando invert bit a LSB*/
-	addContador:
-		cpi r16,8 
-		breq initMaskCont
-		jmp reverseBits
-;--------------------------------------------------------------------
+
+;/

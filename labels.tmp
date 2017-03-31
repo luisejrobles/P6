@@ -5,7 +5,7 @@
  <INCLUDE_PATH>
   <DIR>D:\Program Files (x86)\AVRStudio4\AvrAssembler2\Appnotes</DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Micros\P6\p6v2.asm</SOURCE_FILE>
+ <SOURCE_FILE>C:\Micros\P6\p6.asm</SOURCE_FILE>
  <INCLUDED_FILES>
  </INCLUDED_FILES>
  <OBJECT_FILES>
@@ -18,11 +18,14 @@
   <FILE>C:\Micros\P6\P6.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <inv3130><FILE>C:\Micros\P6\p6v2.asm</FILE><LINE>47</LINE></inv3130>
-  <inv2928><FILE>C:\Micros\P6\p6v2.asm</FILE><LINE>51</LINE></inv2928>
-  <nada><FILE>C:\Micros\P6\p6v2.asm</FILE><LINE>44</LINE></nada>
-  <initReverse><FILE>C:\Micros\P6\p6v2.asm</FILE><LINE>55</LINE></initReverse>
-  <reverseByte><FILE>C:\Micros\P6\p6v2.asm</FILE><LINE>59</LINE></reverseByte>
-  <recorreMascaras><FILE>C:\Micros\P6\p6v2.asm</FILE><LINE>78</LINE></recorreMascaras>
+  <inv3130><FILE>C:\Micros\P6\p6.asm</FILE><LINE>47</LINE></inv3130>
+  <inv2928><FILE>C:\Micros\P6\p6.asm</FILE><LINE>51</LINE></inv2928>
+  <nada><FILE>C:\Micros\P6\p6.asm</FILE><LINE>44</LINE></nada>
+  <initReverse><FILE>C:\Micros\P6\p6.asm</FILE><LINE>55</LINE></initReverse>
+  <reverseByte><FILE>C:\Micros\P6\p6.asm</FILE><LINE>59</LINE></reverseByte>
+  <MSBvalor><FILE>C:\Micros\P6\p6.asm</FILE><LINE>70</LINE></MSBvalor>
+  <MSBcero><FILE>C:\Micros\P6\p6.asm</FILE><LINE>74</LINE></MSBcero>
+  <recorreMascaras><FILE>C:\Micros\P6\p6.asm</FILE><LINE>89</LINE></recorreMascaras>
+  <invertirBit><FILE>C:\Micros\P6\p6.asm</FILE><LINE>78</LINE></invertirBit>
  </LABELS>
 </ASSEMBLER_INFO>
