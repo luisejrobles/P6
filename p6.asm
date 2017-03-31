@@ -77,24 +77,11 @@ MSBcero:
 
 invertirBit:
 	;======NO SON IGUALES=========
-	//mov R21,R23 ;restaurando auxiliar MSB
-	//mov R20,R22 ;restaurando auxiliar LSB
-
-	//com R27 ;complemento uno MSBmask
-	//com R26 ;complemento uno LSBmask
-		eor R23,R27 ;negando bit diferente
-		eor R22,R26 ;negando bit diferente
-	//com R27 ;complemento uno MSBmask para regresar a edo. inicial
-	//com R26 ;complemento uno LSBmask para regresar a edo. inicial
+	eor R23,R27 ;negando bit diferente
+	eor R22,R26 ;negando bit diferente
 recorreMascaras:
 	lsr R27	;recorriendo MSBmask
 	lsl R26 ;recorriendo LSBmask
 	cpi R25,8
 	breq initReverse
 	jmp reverseByte
-
-	
-
-
-
-;/
