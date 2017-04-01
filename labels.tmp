@@ -18,17 +18,18 @@
   <FILE>C:\Micros\P6\P6.map</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <inv3130><FILE>C:\Micros\P6\p6.asm</FILE><LINE>43</LINE></inv3130>
-  <inv2928><FILE>C:\Micros\P6\p6.asm</FILE><LINE>47</LINE></inv2928>
-  <nada><FILE>C:\Micros\P6\p6.asm</FILE><LINE>40</LINE></nada>
-  <initReverse><FILE>C:\Micros\P6\p6.asm</FILE><LINE>51</LINE></initReverse>
-  <reverseByte><FILE>C:\Micros\P6\p6.asm</FILE><LINE>55</LINE></reverseByte>
-  <MSBvalor><FILE>C:\Micros\P6\p6.asm</FILE><LINE>66</LINE></MSBvalor>
-  <MSBcero><FILE>C:\Micros\P6\p6.asm</FILE><LINE>70</LINE></MSBcero>
-  <recorreMascaras><FILE>C:\Micros\P6\p6.asm</FILE><LINE>78</LINE></recorreMascaras>
-  <invertirBit><FILE>C:\Micros\P6\p6.asm</FILE><LINE>74</LINE></invertirBit>
-  <meteRegistros><FILE>C:\Micros\P6\p6.asm</FILE><LINE>85</LINE></meteRegistros>
-  <meteY><FILE>C:\Micros\P6\p6.asm</FILE><LINE>92</LINE></meteY>
-  <meteZ><FILE>C:\Micros\P6\p6.asm</FILE><LINE>88</LINE></meteZ>
+  <validando><FILE>C:\Micros\P6\p6.asm</FILE><LINE>36</LINE></validando>
+  <inv3130><FILE>C:\Micros\P6\p6.asm</FILE><LINE>44</LINE></inv3130>
+  <inv2928><FILE>C:\Micros\P6\p6.asm</FILE><LINE>48</LINE></inv2928>
+  <nada><FILE>C:\Micros\P6\p6.asm</FILE><LINE>41</LINE></nada>
+  <initReverse><FILE>C:\Micros\P6\p6.asm</FILE><LINE>52</LINE></initReverse>
+  <reverseByte><FILE>C:\Micros\P6\p6.asm</FILE><LINE>56</LINE></reverseByte>
+  <MSBvalor><FILE>C:\Micros\P6\p6.asm</FILE><LINE>67</LINE></MSBvalor>
+  <MSBcero><FILE>C:\Micros\P6\p6.asm</FILE><LINE>71</LINE></MSBcero>
+  <recorreMascaras><FILE>C:\Micros\P6\p6.asm</FILE><LINE>79</LINE></recorreMascaras>
+  <invertirBit><FILE>C:\Micros\P6\p6.asm</FILE><LINE>75</LINE></invertirBit>
+  <meteRegistros><FILE>C:\Micros\P6\p6.asm</FILE><LINE>86</LINE></meteRegistros>
+  <meteY><FILE>C:\Micros\P6\p6.asm</FILE><LINE>93</LINE></meteY>
+  <meteZ><FILE>C:\Micros\P6\p6.asm</FILE><LINE>89</LINE></meteZ>
  </LABELS>
 </ASSEMBLER_INFO>

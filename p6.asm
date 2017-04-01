@@ -7,13 +7,13 @@
 ;*01208396									 *
 ;*********************************************
 ;------------- definiciones e includes ------------------------------
-.equ INIT_VALUE = 1 ;
+.equ INIT_VALUE = 3 ;
 ;------------- inicializar ------------------------------------------
 ldi R24,INIT_VALUE ;0 invierte R31-R30(Z)       1 invierte R29-R28(Y)
-ldi R31,0xFF ;1111 1111
-ldi R30,0xAA ;1010 1010
-ldi R29,0x55 ;0101 0101
-ldi R28,0xE6 ;1110 0110
+ldi R31,0xB0 ;1111 1111
+ldi R30,0xB0 ;1010 1010
+ldi R29,0xC0 ;0101 0101
+ldi R28,0xCA ;1110 0110
 /*===========================
 Registros usados
 	R31,0xFF ;1111 1111
@@ -33,12 +33,13 @@ Registros usados
 	R21 [MSBaux] pruebas bits
 	R20 [LSBaux] pruebas bits
 ===========================*/
-cpi R24,0
-breq inv3130
-cpi R24,1
-breq inv2928
+validando:
+	cpi R24,0
+	breq inv3130
+	cpi R24,1
+	breq inv2928
 nada:
-jmp nada
+jmp validando
 
 inv3130:
 	mov R23,R31
